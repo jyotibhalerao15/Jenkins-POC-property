@@ -5,7 +5,12 @@ pipeline {
         stage ("Test Stage"){
             steps {
                 script {
-                                        echo "Inside stage1"
+                    def props = readProperties  file:'./test.properties'
+                    def Var1= props['Monday']
+                    def Var2= props['Tuesday']
+                    echo "Var1=${Var1}"
+                    echo "Var2=${Var2}"
+                    echo "Inside stage1"
                 }
             }
         }
