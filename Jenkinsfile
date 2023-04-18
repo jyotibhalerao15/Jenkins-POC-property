@@ -17,6 +17,8 @@ pipeline {
         stage("Test Stage2"){
             steps{
                 echo "Inside Stage 2"
+                echo "Var1=${Var1}"
+                echo "Var2=${Var2}"
             }
         }
     }
