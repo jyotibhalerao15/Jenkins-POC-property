@@ -5,7 +5,8 @@ pipeline {
         stage ("Test Stage"){
             steps {
                 script {
-                    def props = readProperties  file:'./test.properties'
+                    echo "selected parameter is {params.APP_NAME}"
+                    def props = readProperties  file:'./{params.APP_NAME}'
                     def Var1= props['Monday']
                     def Var2= props['Tuesday']
                     echo "Var1=${Var1}"
